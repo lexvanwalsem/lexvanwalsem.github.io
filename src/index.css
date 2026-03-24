@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 90%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 199 74% 55%;
+    --primary-foreground: 0 0% 2%;
+
+    --secondary: 215 28% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 215 20% 10%;
+    --muted-foreground: 215 10% 50%;
+
+    --accent: 199 74% 55%;
+    --accent-foreground: 0 0% 2%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 199 74% 55%;
+
+    --radius: 0px;
+
+    --grid-color: 0 0% 12%;
+    --scanline-color: 199 74% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono antialiased;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-bold tracking-tight;
+  }
+}
+
+/* Grid paper background */
+.grid-paper {
+  background-image:
+    linear-gradient(hsl(var(--grid-color)) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--grid-color)) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Shader gradient animation */
+.shader-gradient {
+  background: 
+    radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsl(215 60% 30% / 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(199 74% 55% / 0.08) 0%, transparent 50%);
+  animation: shader-move 12s ease-in-out infinite alternate;
+}
+
+@keyframes shader-move {
+  0% { background-position: 0% 0%, 100% 0%, 50% 100%; }
+  33% { background-position: 30% 20%, 70% 40%, 20% 60%; }
+  66% { background-position: 60% 40%, 30% 70%, 80% 30%; }
+  100% { background-position: 100% 60%, 0% 100%, 50% 0%; }
+}
+
+/* Glitch / scanline effect */
+.glitch-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.glitch-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    hsl(var(--scanline-color) / 0.03) 2px,
+    hsl(var(--scanline-color) / 0.03) 4px
+  );
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.glitch-hover:hover::after {
+  opacity: 1;
+  animation: scanline-scroll 0.5s linear infinite;
+}
+
+@keyframes scanline-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+/* Status pulse */
+@keyframes status-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.status-dot {
+  animation: status-pulse 2s ease-in-out infinite;
+}
+
+/* ASCII text styling */
+.ascii-char {
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border: 1px solid hsl(var(--primary) / 0.3);
+}
