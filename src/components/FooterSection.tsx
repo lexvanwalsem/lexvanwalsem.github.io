@@ -1,3 +1,18 @@
+const footerLinks = [
+  {
+    name: "GITHUB",
+    url: "https://github.com/lexvanwalsem",
+  },
+  {
+    name: "LINKEDIN",
+    url: "https://www.linkedin.com/in/lex-van-walsem-2021673a9/",
+  },
+  {
+    name: "EMAIL",
+    url: "mailto:lexvanwalsem@gmail.com", // Pas dit even aan naar je eigen mail
+  },
+];
+
 const FooterSection = () => {
   return (
     <footer className="border-t-2 border-border py-8 px-6">
@@ -6,13 +21,15 @@ const FooterSection = () => {
           © 2026 LEX — ALL SYSTEMS OPERATIONAL
         </div>
         <div className="flex items-center gap-6">
-          {["GITHUB", "LINKEDIN", "EMAIL"].map((link) => (
+          {footerLinks.map((link) => (
             <a
-              key={link}
-              href="#"
-              className="text-[10px] text-muted-foreground tracking-widest font-mono hover:text-primary transition-colors"
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[10px] text-muted-foreground tracking-widest font-mono hover:text-[#36A9E1] transition-colors"
             >
-              {link}
+              {link.name}
             </a>
           ))}
         </div>

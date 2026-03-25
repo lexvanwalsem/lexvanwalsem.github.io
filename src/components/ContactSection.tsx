@@ -10,14 +10,16 @@ const ContactSection = () => {
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    const response = await fetch("https://formspree.io/f/mvzvpdgr", {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },
     });
 
-    setSubmitted(true);
-    form.reset();
+    if (response.ok) {
+      setSubmitted(true);
+      form.reset();
+    }
   };
 
   return (
@@ -43,11 +45,13 @@ const ContactSection = () => {
             <div className="text-center py-8">
               <p className="text-xs text-primary tracking-widest font-mono">MESSAGE_SENT</p>
               <p className="text-xs text-muted-foreground font-mono mt-2">
-                Response queued. Expect reply within 24h.
+                Reactie queued. Verwacht een antwoord binnen 24h.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              <input type="text" name="_gotcha" className="hidden" />
+
               <div>
                 <label className="text-[10px] text-muted-foreground tracking-widest font-mono block mb-2">
                   NAME
@@ -58,7 +62,7 @@ const ContactSection = () => {
                   required
                   maxLength={100}
                   className="w-full bg-background border-2 border-border px-4 py-3 text-xs font-mono text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors"
-                  placeholder="your_name"
+                  placeholder="uw_naam"
                 />
               </div>
               <div>
@@ -84,7 +88,7 @@ const ContactSection = () => {
                   maxLength={1000}
                   rows={4}
                   className="w-full bg-background border-2 border-border px-4 py-3 text-xs font-mono text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors resize-none"
-                  placeholder="// write your message here"
+                  placeholder="// uw bericht hier"
                 />
               </div>
               <button

@@ -2,10 +2,22 @@ import { motion } from "framer-motion";
 import SplitText from "./SplitText";
 
 const skills = [
-  { category: "LANGUAGES", items: ["TypeScript", "Rust", "Go", "Python"] },
-  { category: "FRONTEND", items: ["React", "Next.js", "WebGL", "Framer Motion"] },
-  { category: "BACKEND", items: ["Node.js", "PostgreSQL", "Redis", "gRPC"] },
-  { category: "INFRA", items: ["Docker", "AWS", "Kubernetes", "CI/CD"] },
+  { 
+    category: "TALEN", 
+    items: ["Java", "TypeScript", "JavaScript", "SQL", "Python", "HTML/CSS"] 
+  },
+  { 
+    category: "FRONTEND", 
+    items: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Shadcn/UI", "Lucide"] 
+  },
+  { 
+    category: "BACKEND", 
+    items: ["Spring Boot", "Node.js", "Express", "PostgreSQL", "REST API's", "Hibernate"] 
+  },
+  { 
+    category: "TOOLS & DESIGN", 
+    items: ["Sanity CMS", "Figma", "Git", "Vercel", "Docker", "Postman"] 
+  },
 ];
 
 const SkillsSection = () => {

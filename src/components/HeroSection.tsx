@@ -28,11 +28,11 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          Full-stack developer crafting high-performance web applications.
+          Full-stack ontwikkelaar gespecialiseerd in het bouwen van snelle, moderne omgevingen.
           <br />
-          Specializing in <span className="text-primary">React</span>,{" "}
-          <span className="text-primary">TypeScript</span>, and{" "}
-          <span className="text-primary">Node.js</span>.
+          Focus op <span className="text-primary">Java (Spring Boot)</span>,{" "}
+          <span className="text-primary">Next.js</span> en{" "}
+          <span className="text-primary">TypeScript</span>.
         </motion.p>
 
         <div className="mt-10">
@@ -41,7 +41,7 @@ const HeroSection = () => {
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}

@@ -4,19 +4,43 @@ import SplitText from "./SplitText";
 const experiences = [
   {
     type: "EXPERIENCE",
-    title: "Valley Vultures",
-    role: "Founder & Lead",
-    period: "2024 — PRESENT",
+    title: "van Walsem Consultancy",
+    role: "Freelance Full-stack Ontwikkelaar",
+    period: "DEC. 2025 — HEDEN",
     description:
-      "Building and leading a venture-focused community driving entrepreneurship and innovation.",
+      "Zelfstandig realiseren van applicaties van A tot Z met focus op Next.js en TypeScript. Verantwoordelijk voor de volledige migratie van de Valley Vultures website naar een schaalbare architectuur (Next.js/Sanity/Vercel).",
+  },
+  {
+    type: "EXPERIENCE",
+    title: "Valley Vultures Basketball",
+    role: "Bestuurslid Technische Zaken",
+    period: "NOV. 2024 — HEDEN",
+    description:
+      "Strategische sturing van de technische koers en organisatie binnen de vereniging. Tevens sinds 2022 actief als Trainer & Coach, verantwoordelijk voor tactiek, wedstrijdplanning en teamcoördinatie.",
+  },
+  {
+    type: "EXPERIENCE",
+    title: "BOLD Digital",
+    role: "Software Developer",
+    period: "FEB. 2023 — AUG. 2025",
+    description:
+      "Ontwikkeling van backend systemen met Java Spring Boot en API-koppelingen. UI/UX design in Figma en onderzoek gedaan naar AI-foutdetectie met PyTorch tijdens een verdiepende stageperiode.",
   },
   {
     type: "EDUCATION",
-    title: "Minor Finance",
-    role: "Specialization",
-    period: "2025 — PRESENT",
+    title: "Minor Accounting and Finance",
+    role: "Hogeschool Utrecht",
+    period: "SEP. 2025 — JAN. 2026",
     description:
-      "Deepening financial acumen — corporate finance, investment analysis, and strategic decision-making.",
+      "Succesvol afgerond met focus op Financiële Analyse, Business Simulation (strategische marktkeuzes/kasstroombeheer) en het schrijven van datagedreven adviesrapporten.",
+  },
+  {
+    type: "EDUCATION",
+    title: "Information Technology (HBO-ICT)",
+    role: "HAN University of Applied Sciences",
+    period: "2021 — HEDEN",
+    description:
+      "Bacheloropleiding gericht op software engineering en technische systeemarchitectuur.",
   },
 ];
 
@@ -28,7 +52,7 @@ const ExperienceSection = () => {
           <span className="text-[10px] text-muted-foreground tracking-widest">04</span>
           <div className="h-px flex-1 bg-border" />
           <h2 className="font-display text-2xl sm:text-3xl font-bold">
-            <SplitText text="EXPERIENCE" />
+            <SplitText text="ERVARING" />
           </h2>
           <div className="h-px flex-1 bg-border" />
         </div>

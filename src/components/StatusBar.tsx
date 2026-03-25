@@ -17,8 +17,8 @@ const StatusBar = () => {
   };
 
   const stats = [
-    { label: "STATUS", value: "CODING", active: true },
-    { label: "LOCATION", value: "VEENENDAAL, NL" },
+    { label: "SYSTEM_ACTIVE", value: "CODING", active: true },
+    { label: "LOCATIE", value: "VEENENDAAL, NL" },
     { label: "UPTIME", value: formatUptime(uptime) },
     { label: "STACK", value: "REACT / TS / NODE" },
   ];
